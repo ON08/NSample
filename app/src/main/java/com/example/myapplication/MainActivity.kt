@@ -39,13 +39,13 @@ class MainActivity : AppCompatActivity() {
 
         setupWithNavController(bottomNavigation, navController)
 
-        // 位置情報の利用許可
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            permissionFlag = true
-        } else {
-            // 許可を求めるダイアログを表示
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), PERMISSION_REQUEST_CODE)
-        }
+//        // 位置情報の利用許可
+//        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+//            permissionFlag = true
+//        } else {
+//            // 許可を求めるダイアログを表示
+//            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), PERMISSION_REQUEST_CODE)
+//        }
 
         // BGMの設定
         bgm = MediaPlayer.create(this, R.raw.bgm)
@@ -62,16 +62,16 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    // 位置情報の利用許可の結果を確認
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
-        if(requestCode == PERMISSION_REQUEST_CODE) {
-            permissionFlag = grantResults[0] == PackageManager.PERMISSION_GRANTED
-        }
-    }
+//    // 位置情報の利用許可の結果を確認
+//    override fun onRequestPermissionsResult(
+//        requestCode: Int,
+//        permissions: Array<out String>,
+//        grantResults: IntArray
+//    ) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+//
+//        if(requestCode == PERMISSION_REQUEST_CODE) {
+//            permissionFlag = grantResults[0] == PackageManager.PERMISSION_GRANTED
+//        }
+//    }
 }
